@@ -1,0 +1,21 @@
+version: "3.2"
+
+services:
+  simple-scala:
+    build: 
+      dockerfile: ./Dockerfile
+      context: ./
+    image: simple-scala
+
+    #env_file:
+    #  - env-config.env
+      
+    stdin_open: true
+    tty: true
+         
+    volumes:
+      - ./:/working
+    
+    command:
+      /bin/bash
+
